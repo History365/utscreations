@@ -1,0 +1,166 @@
+/* 
+ * Library Albums Consistency Fixes
+ * This file contains fixes for album cover sizes and info display
+ * in the library page across all screen sizes
+ */
+
+/* Base album item styles */
+.albums-grid .album-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Standard album card styling */
+.album-card {
+  text-decoration: none;
+  color: var(--text-primary);
+  display: block;
+  transition: transform 0.2s ease;
+  height: 100%;
+}
+
+.album-card:active {
+  transform: scale(0.97);
+}
+
+/* Consistent album cover containers */
+.albums-grid .album-cover-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* Perfect square aspect ratio */
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure images fill the container */
+.albums-grid .album-cover-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center; /* Center the image properly */
+}
+
+/* Album text info styling */
+.albums-grid .album-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 8px 0 2px;
+  padding: 0 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.albums-grid .album-artist {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 0;
+  padding: 0 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+/* Fix specific to uniform albums grid */
+.uniform-albums {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+/* Override any conflicting styles */
+.uniform-albums .album-item,
+.albums-grid.uniform-albums .album-item {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Critical mobile fixes for consistent sizing */
+@media (max-width: 767px) {
+  .albums-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+  
+  .albums-grid .album-item {
+    width: 100% !important;
+    max-width: none !important;
+    flex: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .album-cover-container {
+    height: 0 !important;
+    padding-bottom: 100% !important;
+  }
+}
+
+/* Specific fixes for very small mobile screens */
+@media (max-width: 320px) {
+  .albums-grid {
+    gap: 12px;
+  }
+  
+  .albums-grid .album-title {
+    font-size: 13px;
+  }
+  
+  .albums-grid .album-artist {
+    font-size: 11px;
+  }
+}
+
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+  .uniform-albums {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .albums-grid .album-title {
+    font-size: 15px;
+  }
+}
+
+/* Desktop screens */
+@media (min-width: 992px) {
+  .uniform-albums {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+  }
+}
+
+/* Improved hover effects */
+.album-card:hover .album-cover-container {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.album-card:hover .album-cover-container img {
+  transform: scale(1.05);
+}
+
+/* Fix for Safari rendering issues */
+.album-cover-container::before {
+  content: "";
+  display: block;
+  height: 0;
+}
+
+/* Fix for landscape mode */
+@media (orientation: landscape) and (max-height: 500px) {
+  .uniform-albums {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

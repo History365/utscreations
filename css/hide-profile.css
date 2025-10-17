@@ -1,0 +1,92 @@
+/* Profile image hiding CSS */
+.profile-image,
+.profile-icon,
+.user-profile-link,
+.user-avatar,
+#profileImage,
+.user-dropdown,
+.profile-menu,
+.avatar-container,
+.user-avatar-container,
+#userProfileButton,
+.header-profile-image,
+.navbar-user-icon {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: absolute !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    clip-path: inset(50%) !important;
+}
+
+/* Ensure mobile views also hide profile elements */
+@media (max-width: 767.98px) {
+    .profile-image,
+    .profile-icon,
+    .user-profile-link,
+    .user-avatar,
+    #profileImage,
+    .user-dropdown,
+    .profile-menu,
+    .avatar-container,
+    .user-avatar-container,
+    #userProfileButton,
+    .header-profile-image,
+    .navbar-user-icon {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+    
+    /* Specific album view header adjustments for mobile */
+    .album-top-header .right-header-section,
+    .page-header .right-header-section {
+        justify-content: flex-end !important;
+        padding-right: 12px !important;
+    }
+    
+    /* Hide any dynamic profile elements that might be added */
+    [class*="profile"],
+    [class*="avatar"],
+    [id*="profile"],
+    [id*="avatar"] {
+        display: none !important;
+        visibility: hidden !important;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+    .profile-image,
+    .profile-icon,
+    .user-profile-link,
+    .user-avatar,
+    #profileImage,
+    .user-dropdown,
+    .profile-menu {
+        display: none !important;
+        visibility: hidden !important;
+    }
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+    .profile-image,
+    .profile-icon,
+    .user-profile-link,
+    .user-avatar,
+    #profileImage,
+    .user-dropdown,
+    .profile-menu {
+        display: none !important;
+        visibility: hidden !important;
+        position: absolute !important;
+        z-index: -999 !important;
+        transform: translateX(-9999px) !important;
+    }
+}

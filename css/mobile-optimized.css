@@ -28,9 +28,10 @@ body {
 
 /* Library Page */
 .library-container {
-  padding: 16px 12px;
+  padding: 16px 16px;
   padding-bottom: calc(var(--mini-player-height) + var(--nav-height) + 20px);
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* Header with profile pic */
@@ -99,17 +100,19 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   margin-bottom: 32px;
+  width: 100%;
 }
 
 .album-item {
-  display: flex;
-  flex-direction: column;
+  display: block;
+  width: 100%;
 }
 
 .album-card {
   text-decoration: none;
   color: var(--text-primary);
   display: block;
+  width: 100%;
 }
 
 .album-cover-container {
@@ -304,7 +307,7 @@ body {
 
 /* Album and playlist page styles */
 .album-view {
-  padding: 16px 12px;
+  padding: 16px;
 }
 
 .album-header {
@@ -314,14 +317,15 @@ body {
   margin-bottom: 24px;
   text-align: center;
   width: 100%;
+  padding: 0 8px;
 }
 
 .album-cover-large {
   position: relative;
-  width: 70%;
+  width: 75%;
   max-width: 280px;
-  padding-bottom: 70%; /* Square aspect ratio */
-  margin-bottom: 16px;
+  padding-bottom: 75%; /* Square aspect ratio */
+  margin-bottom: 20px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);

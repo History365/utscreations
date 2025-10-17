@@ -1,0 +1,49 @@
+/* Aspect ratio fixes for album cover at different screen sizes */
+
+/* Square aspect ratio for mobile */
+@media (max-width: 767.98px) {
+  .full-width-album-art img {
+    aspect-ratio: 1/1;
+  }
+}
+
+/* For landscape phones */
+@media (max-width: 767.98px) and (orientation: landscape) {
+  .full-width-album-art img {
+    aspect-ratio: 16/9;
+    height: auto;
+  }
+  
+  .album-header {
+    background-color: rgba(18, 18, 18, 0.9);
+  }
+}
+
+/* For larger screens - maintain proportion but limit height */
+@media (min-width: 768px) {
+  .full-width-album-art img {
+    max-height: 60vh;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+/* For very large screens */
+@media (min-width: 1200px) {
+  .full-width-album-art img {
+    max-height: 70vh;
+  }
+}
+
+/* For ultra wide screens - prevent extreme stretching */
+@media (min-width: 1600px) {
+  .full-width-album-art {
+    text-align: center;
+  }
+  
+  .full-width-album-art img {
+    max-width: 1600px;
+    margin: 56px auto 0;
+    width: 100%;
+  }
+}

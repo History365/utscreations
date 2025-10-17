@@ -1,0 +1,129 @@
+.album-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.full-width-album-art {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.full-width-album-art img {
+    width: 100vw;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin-top: 56px; /* Height of the fixed header */
+}
+
+.album-detail-container {
+    margin-top: 20px;
+    padding-bottom: 80px; /* Space for player at bottom */
+}
+
+/* Track list styling */
+.track-list {
+    margin-bottom: 80px; /* Space for global player */
+}
+
+.track-list .list-group-item {
+    border-radius: 4px;
+    margin-bottom: 4px;
+    transition: background-color 0.2s;
+    border: 1px solid #333;
+}
+
+.track-list .list-group-item:hover {
+    background-color: #2a2a2a !important;
+}
+
+/* Album actions */
+.album-actions .btn {
+    min-width: 100px;
+}
+
+/* Back button styling */
+.back-button {
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: rgba(40, 40, 40, 0.7);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    margin-right: 16px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-size: 20px;
+}
+
+.back-button:hover {
+    background-color: rgba(60, 60, 60, 0.9);
+    color: white;
+}
+
+.back-button span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Mobile optimizations */
+@media (max-width: 767.98px) {
+    .full-width-album-art img {
+        height: auto;
+        width: 100vw;
+        aspect-ratio: 1/1;
+    }
+    
+    .album-header {
+        padding: 10px 12px;
+    }
+    
+    .album-detail-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .album-detail-container .row {
+        flex-direction: column;
+    }
+    
+    .album-actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
+        margin-bottom: 20px;
+    }
+    
+    h2#albumDetailTitle {
+        font-size: 24px;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    h3#albumDetailArtist {
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    .text-muted {
+        text-align: center;
+        display: block;
+    }
+}

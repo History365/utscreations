@@ -1,0 +1,98 @@
+/* 
+ * Album View Improvements
+ * This file contains improved styling for the album view
+ */
+
+/* Better album header with proper back button placement */
+.album-top-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-top: 16px;
+  position: relative;
+  height: 40px;
+}
+
+/* Style the back button */
+.back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+}
+
+.back-button:hover, .back-button:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.back-button:active {
+  transform: scale(0.95);
+}
+
+/* Clean up album container */
+#album-container {
+  padding-top: 8px;
+}
+
+/* Force hide any profile picture elements */
+#album-container .profile-pic-container,
+.album-top-header .profile-pic-container {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  pointer-events: none !important;
+}
+
+/* Improve album header layout */
+.album-header {
+  margin-top: 24px;
+}
+
+/* Ensure proper spacing */
+.album-actions {
+  margin-top: 16px;
+  margin-bottom: 28px;
+}
+
+/* Add safe area padding for iOS */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .album-top-header {
+    padding-top: max(16px, env(safe-area-inset-top));
+  }
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .album-top-header {
+    padding-top: 20px;
+    margin-bottom: 24px;
+  }
+  
+  .back-button {
+    font-size: 20px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Landscape orientation */
+@media (orientation: landscape) and (max-height: 500px) {
+  .album-top-header {
+    padding-top: 8px;
+    margin-bottom: 16px;
+    height: 36px;
+  }
+}

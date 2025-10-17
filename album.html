@@ -8,7 +8,14 @@
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="songs/cover.jpg">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap-utilities.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/album-view-fix.css">
+    <link rel="stylesheet" href="css/album-mobile-fixes.css">
+    <link rel="stylesheet" href="css/album-detail.css">
+    <link rel="stylesheet" href="css/album-cover-responsive.css">
+    <link rel="stylesheet" href="css/album-profile-hide.css">
     <title>Album Details - MusicListener6000</title>
 </head>
 <body>
@@ -33,21 +40,21 @@
     </div>
     
     <!-- Main Content -->
-    <div class="container main-content">
-        <div class="d-flex align-items-center mb-4">
-            <a href="index.html" class="btn btn-outline-light me-3">
+    <div class="main-content">
+        <div class="album-header">
+            <a href="index.html" class="back-button">
                 <span>←</span> Back
             </a>
             <h1 class="app-title m-0">Album Details</h1>
         </div>
         
-        <div class="album-detail-container">
+        <div class="full-width-album-art">
+            <img src="songs/cover.jpg" alt="Album Cover" id="albumDetailCover" class="img-fluid">
+        </div>
+        
+        <div class="container album-detail-container">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="album-art-large mb-4">
-                        <img src="songs/cover.jpg" alt="Album Cover" id="albumDetailCover" class="img-fluid">
-                    </div>
-                </div>
+                <div class="col-md-12">
                 <div class="col-md-8">
                     <h2 id="albumDetailTitle">Dirt</h2>
                     <h3 id="albumDetailArtist">Alice In Chains</h3>
@@ -85,7 +92,10 @@
     </div>
     
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/mockData.js"></script>
+    <script src="js/update-covers.js"></script>
     <script src="js/player.js"></script>
+    <script src="js/album-detail.js"></script>
     <script>
         // Register service worker for offline capabilities
         if ('serviceWorker' in navigator) {

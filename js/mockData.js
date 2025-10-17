@@ -10,7 +10,7 @@ const mockAlbums = [
     id: "album1",
     title: "Dirt",
     artist: "Alice In Chains",
-    coverUrl: "img/default-cover.png",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/54/26/62/5426627b-4707-7867-acc0-ce616d250381/074645247526.jpg/600x600bb.jpg",
     year: 1992,
     songs: [
       {
@@ -46,7 +46,7 @@ const mockAlbums = [
     id: "album2",
     title: "Jar of Flies",
     artist: "Alice In Chains",
-    coverUrl: "img/default-cover.png",
+    coverUrl: "https://is2-ssl.mzstatic.com/image/thumb/Music115/v4/3e/22/66/3e22668a-64b0-2d36-cc76-7675e870c4f0/074645248523.jpg/600x600bb.jpg",
     year: 1994,
     songs: [
       {
@@ -73,7 +73,7 @@ const mockAlbums = [
     id: "album3",
     title: "The Dark Side of the Moon",
     artist: "Pink Floyd",
-    coverUrl: "img/default-cover.png",
+    coverUrl: "https://is1-ssl.mzstatic.com/image/thumb/Features/v4/bd/1f/35/bd1f3588-5053-589e-7ef6-4a82a8b33be0/mza_10533326683357866598.jpg/600x600bb.jpg",
     year: 1973,
     songs: [
       {
@@ -100,7 +100,7 @@ const mockAlbums = [
     id: "album4",
     title: "Ten",
     artist: "Pearl Jam",
-    coverUrl: "img/default-cover.png",
+    coverUrl: "https://is2-ssl.mzstatic.com/image/thumb/Music115/v4/93/c4/ae/93c4ae78-4030-2432-d428-2752e5c415b4/mzi.lcigfoax.jpg/600x600bb.jpg",
     year: 1991,
     songs: [
       {

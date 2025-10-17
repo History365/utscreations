@@ -1,0 +1,37 @@
+/* This CSS only hides profile pictures in the album view, not the profile page */
+body:not(.profile-page) .profile-image,
+body:not(.profile-page) .profile-icon,
+body:not(.profile-page) .user-profile-link,
+body:not(.profile-page) .user-avatar,
+body:not(.profile-page) #profileImage,
+body:not(.profile-page) .user-dropdown,
+body:not(.profile-page) .profile-menu,
+body:not(.profile-page) .avatar-container,
+body:not(.profile-page) .user-avatar-container,
+body:not(.profile-page) #userProfileButton,
+body:not(.profile-page) .header-profile-image,
+body:not(.profile-page) .navbar-user-icon {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Mobile specific hiding */
+@media (max-width: 767.98px) {
+    body:not(.profile-page) .profile-image,
+    body:not(.profile-page) .profile-icon,
+    body:not(.profile-page) .user-profile-link,
+    body:not(.profile-page) .user-avatar,
+    body:not(.profile-page) #profileImage,
+    body:not(.profile-page) .user-dropdown,
+    body:not(.profile-page) .profile-menu,
+    body:not(.profile-page) .avatar-container,
+    body:not(.profile-page) .user-avatar-container,
+    body:not(.profile-page) #userProfileButton,
+    body:not(.profile-page) .header-profile-image,
+    body:not(.profile-page) .navbar-user-icon {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+}

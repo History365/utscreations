@@ -1,0 +1,80 @@
+/* Album page mobile refinements */
+#album-container {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 0; /* Let the album-top-header handle spacing */
+}
+
+.album-info {
+  padding: 0 12px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.album-actions {
+  margin-top: 8px;
+  margin-bottom: 32px;
+}
+
+.library-section {
+  padding: 0 4px;
+}
+
+.section-header {
+  margin-bottom: 16px;
+  padding-left: 0;
+}
+
+.songs-list {
+  margin: 0 -4px;
+}
+
+/* Fix album cover consistency */
+.album-cover-large img {
+  object-position: center;
+}
+
+/* Medium phone spacing */
+@media (max-width: 400px) {
+  #album-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  
+  .album-header {
+    margin-bottom: 16px;
+  }
+  
+  .album-actions {
+    margin-bottom: 24px;
+  }
+}
+
+/* Ensure proper spacing for tracks list */
+.song-item {
+  padding: 12px 8px;
+  margin: 0 0 8px 0;
+}
+
+/* Fix for landscape mode */
+@media (orientation: landscape) and (max-height: 500px) {
+  .album-header {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 16px;
+    gap: 24px;
+  }
+  
+  .album-cover-large {
+    width: 40%;
+    padding-bottom: 40%;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+  
+  .album-info {
+    padding: 0;
+    text-align: left;
+  }
+}

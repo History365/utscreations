@@ -26,17 +26,24 @@
 /* Small phone screens */
 @media (max-width: 360px) {
   .album-cover-large.uniform-cover {
-    width: 85%;
-    padding-bottom: 85%;
+    width: 80%;
+    padding-bottom: 80%;
+  }
+  
+  /* Ensure the container width matches exactly */
+  .album-cover-large.uniform-cover::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
   }
 }
 
 /* Medium-sized screens */
-@media (min-width: 576px) {
+@media (min-width: 376px) {
   .album-cover-large.uniform-cover {
-    width: 60%;
-    padding-bottom: 60%;
-    max-width: 320px;
+    width: 65%;
+    padding-bottom: 65%;
+    max-width: 300px;
   }
 }
 

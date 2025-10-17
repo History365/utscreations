@@ -1,0 +1,55 @@
+/* Critical overrides for mobile library view */
+
+/* Ensure all album items maintain exactly the same width */
+@media (max-width: 767px) {
+  /* Reset any Bootstrap classes that might affect the grid */
+  .albums-grid .col,
+  .albums-grid [class*="col-"] {
+    width: 100% !important;
+    max-width: none !important;
+    flex: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Forced grid styling - this must win over all other styles */
+  .albums-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  /* Force same height/width for all album covers */
+  .album-cover-container {
+    position: relative !important;
+    width: 100% !important;
+    height: 0 !important;
+    padding-top: 0 !important; 
+    padding-bottom: 100% !important;
+    margin-bottom: 8px !important;
+  }
+  
+  /* Remove any flex properties that might cause inconsistency */
+  .album-item {
+    display: block !important;
+    height: auto !important;
+  }
+  
+  /* Ensure title text doesn't affect layout */
+  .album-title, .album-artist {
+    height: auto !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+}
+
+/* Target very small screens for additional fixes */
+@media (max-width: 359px) {
+  .albums-grid {
+    gap: 12px !important;
+  }
+}
