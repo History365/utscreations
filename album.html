@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="songs/cover.jpg">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Album Details - MusicListener6000</title>
+</head>
+<body>
+    <!-- Global Player (sticky at bottom) - same as index.html -->
+    <div id="global-player" class="fixed-bottom">
+        <div class="mini-player-container">
+            <img id="mini-album-art" src="songs/cover.jpg" alt="Album Cover" class="mini-cover">
+            <div class="mini-song-info">
+                <p id="mini-song-title">Them Bones</p>
+                <p id="mini-artist-name">Alice In Chains</p>
+            </div>
+            <div class="mini-controls">
+                <button onclick="prevTrack()">⏮️</button>
+                <button onclick="togglePlay()" id="playPauseBtn">⏯️</button>
+                <button onclick="nextTrack()">⏭️</button>
+            </div>
+        </div>
+        <audio id="player">
+            <source src="songs/them-bones.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="container main-content">
+        <div class="d-flex align-items-center mb-4">
+            <a href="index.html" class="btn btn-outline-light me-3">
+                <span>←</span> Back
+            </a>
+            <h1 class="app-title m-0">Album Details</h1>
+        </div>
+        
+        <div class="album-detail-container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="album-art-large mb-4">
+                        <img src="songs/cover.jpg" alt="Album Cover" id="albumDetailCover" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <h2 id="albumDetailTitle">Dirt</h2>
+                    <h3 id="albumDetailArtist">Alice In Chains</h3>
+                    <p class="text-muted">Released: September 29, 1992</p>
+                    <p class="text-muted">13 songs • 57 minutes</p>
+                    
+                    <div class="album-actions mt-4">
+                        <button class="btn btn-success me-2" onclick="playAlbum(1)">Play</button>
+                        <button class="btn btn-outline-light" onclick="shuffleAlbum(1)">Shuffle</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="track-list mt-5">
+                <h4>Tracks</h4>
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action bg-dark text-white" onclick="playSong(1, 0)">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">1. Them Bones</h5>
+                            <small>2:29</small>
+                        </div>
+                        <small class="text-muted">Alice In Chains</small>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action bg-dark text-white" onclick="playSong(1, 1)">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">2. Dam That River</h5>
+                            <small>3:23</small>
+                        </div>
+                        <small class="text-muted">Alice In Chains</small>
+                    </a>
+                    <!-- Add more tracks as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/player.js"></script>
+    <script>
+        // Register service worker for offline capabilities
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('ServiceWorker registration failed: ', error);
+                    });
+            });
+        }
+    
+        // Album detail specific functions
+        function playAlbum(albumId) {
+            // Find the album in the music library
+            const album = musicLibrary.albums.find(a => a.id === albumId);
+            if (album) {
+                currentPlaylist = album.songs;
+                currentIndex = 0;
+                loadSong(currentPlaylist[currentIndex]);
+                audio.play();
+                isPlaying = true;
+                updatePlayPauseButtons(true);
+            }
+        }
+        
+        function shuffleAlbum(albumId) {
+            // Find the album in the music library
+            const album = musicLibrary.albums.find(a => a.id === albumId);
+            if (album) {
+                // Create a shuffled copy of the songs array
+                currentPlaylist = [...album.songs];
+                for (let i = currentPlaylist.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [currentPlaylist[i], currentPlaylist[j]] = [currentPlaylist[j], currentPlaylist[i]];
+                }
+                
+                currentIndex = 0;
+                loadSong(currentPlaylist[currentIndex]);
+                audio.play();
+                isPlaying = true;
+                updatePlayPauseButtons(true);
+            }
+        }
+        
+        function playSong(albumId, songIndex) {
+            // Find the album
+            const album = musicLibrary.albums.find(a => a.id === albumId);
+            if (album && album.songs[songIndex]) {
+                currentPlaylist = album.songs;
+                currentIndex = songIndex;
+                loadSong(currentPlaylist[currentIndex]);
+                audio.play();
+                isPlaying = true;
+                updatePlayPauseButtons(true);
+            }
+        }
+    </script>
+</body>
+</html>

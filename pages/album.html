@@ -1,0 +1,56 @@
+<!-- Album Detail Page -->
+<div class="library-container" id="album-container">
+  <!-- Album Header -->
+  <div class="library-header">
+    <a href="javascript:history.back()" class="back-button">
+      <i class="fas fa-chevron-left"></i>
+    </a>
+    <div class="profile-pic-container">
+      <img src="img/default-avatar.png" alt="Profile" class="profile-pic">
+    </div>
+  </div>
+  
+  <!-- Album Details -->
+  <div class="album-header" id="album-header">
+    <div class="album-cover-large uniform-cover">
+      <img id="album-cover" src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/bd/d6/37/bdd6373e-dc26-e86e-1d31-9bb1f7656968/5099747485527.jpg/600x600bb.jpg" alt="Album Cover">
+    </div>
+    
+    <div class="album-info">
+      <h1 id="album-title">Album Title</h1>
+      <h2 id="album-artist">Artist Name</h2>
+      <p class="album-meta">
+        <span id="album-year">Year</span> • <span id="album-tracks">12 tracks</span>
+      </p>
+    </div>
+  </div>
+  
+  <!-- Album Actions -->
+  <div class="album-actions">
+    <button id="play-album" class="btn-play">
+      <i class="fas fa-play"></i>
+    </button>
+    <button id="shuffle-album" class="btn-action">
+      <i class="fas fa-random"></i>
+    </button>
+    <button id="add-to-library" class="btn-action">
+      <i class="fas fa-plus"></i>
+    </button>
+  </div>
+  
+  <!-- Track List -->
+  <div class="library-section">
+    <h2 class="section-header">Tracks</h2>
+    <div class="songs-list" id="album-songs">
+      <!-- Tracks will be loaded here -->
+      <div class="song-item loading">
+        <div class="song-info">
+          <div class="spinner-border spinner-border-sm text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <span class="ms-2">Loading tracks...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

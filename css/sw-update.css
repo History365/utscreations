@@ -1,0 +1,56 @@
+/* Service Worker Update Notification */
+.update-notification {
+    position: fixed;
+    bottom: calc(var(--bottom-height) + var(--mini-player-height) + var(--safe-area-inset-bottom) + 20px);
+    left: 16px;
+    right: 16px;
+    background-color: var(--card-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    animation: slideUp 0.3s ease-out;
+}
+
+.update-notification-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.update-notification p {
+    margin-bottom: 16px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.update-notification button {
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 8px;
+}
+
+#update-app-btn {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+}
+
+#dismiss-update-btn {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

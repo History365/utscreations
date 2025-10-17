@@ -1,0 +1,259 @@
+/* Base Styles */
+body {
+  background: #121212;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 80px; /* Space for the fixed player */
+}
+
+.main-content {
+  padding-top: 20px;
+  padding-bottom: 100px;
+}
+
+.app-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+  border-bottom-color: #333;
+  margin-bottom: 20px;
+}
+
+.nav-tabs .nav-link {
+  color: #b3b3b3;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+}
+
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus {
+  color: #fff;
+  border-color: transparent;
+}
+
+.nav-tabs .nav-link.active {
+  color: #1db954;
+  background-color: transparent;
+  border-bottom: 2px solid #1db954;
+}
+
+/* Now Playing Section */
+.now-playing-container {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.album-art-large {
+  width: 280px;
+  height: 280px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.album-art-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Progress Bar */
+.progress {
+  height: 6px;
+  background-color: #3e3e3e;
+  cursor: pointer;
+}
+
+.progress-bar {
+  background-color: #1db954;
+}
+
+.time-display {
+  font-size: 0.8rem;
+  color: #b3b3b3;
+}
+
+/* Player Controls */
+.controls-large {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.control-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.play-btn {
+  font-size: 40px;
+  margin: 0 20px;
+}
+
+/* Global Player (Fixed Bottom) */
+#global-player {
+  background-color: #181818;
+  border-top: 1px solid #282828;
+  padding: 10px 15px;
+  height: 70px;
+}
+
+.mini-player-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mini-cover {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.mini-song-info {
+  flex-grow: 1;
+  padding: 0 15px;
+  text-align: left;
+}
+
+.mini-song-info p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.mini-song-info p:first-child {
+  font-weight: bold;
+  color: #fff;
+}
+
+.mini-song-info p:last-child {
+  font-size: 0.8rem;
+  color: #b3b3b3;
+}
+
+.mini-controls {
+  display: flex;
+  align-items: center;
+}
+
+.mini-controls button {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  padding: 5px;
+  margin: 0 5px;
+}
+
+/* Hide the default audio controls */
+audio {
+  display: none;
+}
+
+/* Albums Grid */
+.album-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.album-card {
+  background-color: #181818;
+  border-radius: 8px;
+  padding: 15px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.album-card:hover {
+  background-color: #282828;
+}
+
+.album-cover {
+  border-radius: 4px;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.album-info {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.album-info h5 {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.album-info p {
+  color: #b3b3b3;
+  font-size: 0.8rem;
+  margin: 5px 0 0;
+}
+
+.placeholder-cover {
+  background-color: #333;
+  border-radius: 4px;
+  width: 100%;
+  aspect-ratio: 1/1;
+  color: #b3b3b3;
+  font-size: 14px;
+}
+
+/* Playlists */
+.playlists-container {
+  text-align: left;
+}
+
+.playlist-item {
+  background-color: #181818;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.playlist-item:hover {
+  background-color: #282828;
+}
+
+/* Settings */
+.settings-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+  .album-art-large {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .mini-song-info {
+    max-width: 150px;
+  }
+}
+
+/* Make sure the app takes at least the full screen height */
+html, body {
+  min-height: 100vh;
+}

@@ -1,0 +1,42 @@
+{
+  "name": "MusicListener6000",
+  "short_name": "Music6000",
+  "description": "Firebase-powered music streaming app for iOS via Capacitor",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#1db954",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "img/app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "img/screenshot1.png",
+      "sizes": "1080x2340",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["music", "entertainment"],
+  "shortcuts": [
+    {
+      "name": "Now Playing",
+      "short_name": "Play",
+      "description": "Open Now Playing view",
+      "url": "index.html#now-playing"
+    },
+    {
+      "name": "Search",
+      "short_name": "Search",
+      "description": "Search for songs",
+      "url": "index.html#search"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

@@ -1,0 +1,66 @@
+<!-- Now Playing Page -->
+<div class="now-playing-container" id="fullscreen-player">
+  <button id="close-player-btn" class="back-button">
+    <i class="fas fa-chevron-down"></i>
+  </button>
+  
+  <div class="cover-art-container">
+    <img id="cover-art-large" src="img/default-cover.png" alt="Album Cover" class="cover-art-large">
+  </div>
+  
+  <div class="song-info-large">
+    <h2 id="song-title" class="song-title-large">No Song Playing</h2>
+    <h3 id="artist-name" class="song-artist-large">Select a song to play</h3>
+    <p id="album-name" class="song-album"></p>
+  </div>
+  
+  <div class="player-controls-container">
+    <div class="seek-container">
+      <input type="range" id="seek-bar" class="seek-bar" value="0" min="0" max="100">
+      <div class="time-display">
+        <span id="current-time">0:00</span>
+        <span id="duration">0:00</span>
+      </div>
+    </div>
+    
+    <div class="player-controls">
+      <button id="shuffle-btn" class="control-button">
+        <i class="fas fa-random"></i>
+      </button>
+      <button id="prev-btn" class="control-button">
+        <i class="fas fa-step-backward"></i>
+      </button>
+      <button id="play-btn-large" class="control-button large">
+        <i class="fas fa-play"></i>
+      </button>
+      <button id="next-btn" class="control-button">
+        <i class="fas fa-step-forward"></i>
+      </button>
+      <button id="repeat-btn" class="control-button repeat-none">
+        <i class="fas fa-repeat"></i>
+      </button>
+    </div>
+    
+    <div class="volume-container">
+      <button id="mute-btn" class="control-button">
+        <i class="fas fa-volume-up"></i>
+      </button>
+      <input type="range" id="volume-control" class="volume-bar" min="0" max="100" value="80">
+    </div>
+    
+    <div class="queue-controls">
+      <button id="queue-btn" class="btn btn-outline">
+        <i class="fas fa-list"></i> Queue
+      </button>
+    </div>
+    
+    <div id="queue-container" class="queue-section hidden">
+      <div class="queue-header">
+        <h3>Next Up</h3>
+      </div>
+      <div id="queue-list">
+        <!-- Queue items will be added here -->
+      </div>
+    </div>
+  </div>
+</div>

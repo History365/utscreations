@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="img/app-icon.png">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>MusicListener6000</title>
+</head>
+<body>
+    <!-- App Container -->
+    <div id="app">
+        <!-- Content Area (Pages get loaded here) -->
+        <div id="app-content">
+            <!-- Page content will be loaded here -->
+        </div>
+        
+        <!-- Mini Player (Fixed at bottom) -->
+        <div id="mini-player" class="hidden">
+            <img id="mini-cover" src="img/default-cover.png" alt="Cover Art">
+            <div id="mini-song-info">
+                <div id="mini-song-title">Select a song</div>
+                <div id="mini-artist-name">to start playing</div>
+            </div>
+            <div id="mini-controls">
+                <button id="mini-prev-btn" class="control-btn" onclick="previousSong()">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button id="mini-play-btn" class="control-btn" onclick="togglePlayback()">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button id="mini-next-btn" class="control-btn" onclick="nextSong()">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+            </div>
+            <div id="mini-progress">
+                <div id="mini-progress-bar"></div>
+            </div>
+        </div>
+        
+        <!-- Bottom Navigation -->
+        <nav id="bottom-nav">
+            <a href="#home" class="nav-link">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#search" class="nav-link">
+                <i class="fas fa-search"></i>
+                <span>Search</span>
+            </a>
+            <a href="#library" class="nav-link">
+                <i class="fas fa-book"></i>
+                <span>Library</span>
+            </a>
+            <a href="#profile" class="nav-link">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Create an audio element for music playback -->
+    <audio id="music-player"></audio>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Firebase SDK will be initialized in firebase.js
+        // We're using type="module" to support ES6 imports
+    </script>
+
+    <!-- App Scripts -->
+    <script type="module" src="js/app.js"></script>
+
+    <!-- Capacitor Core -->
+    <script>
+        // Capacitor core will be injected when building the app
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if running in Capacitor
+            if (window.Capacitor) {
+                // Initialize Capacitor plugins
+                document.body.classList.add('in-capacitor');
+                
+                // Setup status bar for iOS
+                if (window.Capacitor.isPluginAvailable('StatusBar')) {
+                    window.Capacitor.Plugins.StatusBar.setStyle({
+                        style: 'DARK'
+                    });
+                }
+                
+                // Initialize background mode for audio
+                if (window.Capacitor.isPluginAvailable('BackgroundMode')) {
+                    window.Capacitor.Plugins.BackgroundMode.enable();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

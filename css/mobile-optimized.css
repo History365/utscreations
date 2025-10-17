@@ -1,0 +1,402 @@
+/* Mobile Optimized Styles for DEM Music */
+
+/* Reset body padding and margin */
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+#app {
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Make sure content takes full width on mobile */
+@media (max-width: 991.98px) {
+  .container, .container-fluid {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+/* Library Page */
+.library-container {
+  padding: 16px 12px;
+  padding-bottom: calc(var(--mini-player-height) + var(--nav-height) + 20px);
+  overflow-x: hidden;
+}
+
+/* Header with profile pic */
+.library-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-top: 12px; /* Safe area for notch */
+}
+
+.library-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.profile-pic-container {
+  width: 36px;
+  height: 36px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Library navigation */
+.library-nav {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -12px 24px -12px;
+  padding: 0 12px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.library-nav::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.library-nav-item {
+  flex: 0 0 auto;
+  padding: 8px 16px;
+  margin-right: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  white-space: nowrap;
+  color: var(--text-secondary);
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.library-nav-item.active {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Albums grid - 2 per line for mobile */
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.album-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.album-card {
+  text-decoration: none;
+  color: var(--text-primary);
+  display: block;
+}
+
+.album-cover-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* 1:1 Aspect Ratio */
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.album-cover-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.album-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.album-artist {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Section headers */
+.section-header {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Songs list */
+.songs-list {
+  margin-bottom: 24px;
+}
+
+.song-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.song-info {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0; /* Allows truncation */
+}
+
+.song-cover-small {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  margin-right: 12px;
+  object-fit: cover;
+}
+
+.song-details {
+  flex: 1;
+  min-width: 0; /* Allows truncation */
+}
+
+.song-details h4 {
+  font-size: 14px;
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.song-details p {
+  font-size: 12px;
+  margin: 0;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.play-song-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+
+/* Create playlist card */
+.create-playlist-card {
+  height: 100%;
+  min-height: 120px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.create-playlist-card i {
+  color: var(--primary-color);
+}
+
+.create-playlist-card h5 {
+  font-size: 14px;
+  margin: 8px 0 0;
+}
+
+/* Bottom padding for content to avoid overlapping with player and nav */
+#app-content {
+  padding-bottom: calc(var(--mini-player-height) + var(--nav-height) + 20px);
+  margin-left: 0 !important; /* Remove margin on mobile */
+  width: 100% !important;
+}
+
+/* Only add margin for desktop screens */
+@media (min-width: 992px) {
+  #app-content {
+    margin-left: 240px !important;
+    width: calc(100% - 240px) !important;
+  }
+}
+
+/* Override Bootstrap container padding */
+.container {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* Make mobile navigation more prominent */
+#bottom-nav {
+  background-color: var(--darker-bg);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  padding-bottom: env(safe-area-inset-bottom, 0); /* For iPhones with home indicator */
+  width: 100% !important;
+  margin: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+/* Make active nav icon more visible without changing size */
+#bottom-nav .nav-link.active-nav {
+  color: var(--primary-color);
+  border-top: none;
+}
+
+#bottom-nav .nav-link.active-nav img {
+  filter: brightness(1.5) sepia(1) saturate(3) hue-rotate(80deg) !important;
+}
+
+/* Mini player optimizations */
+#mini-player {
+  background-color: var(--card-bg);
+  padding: 8px 12px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+  width: 100% !important;
+  margin: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+#mini-song-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#mini-artist-name {
+  font-size: 12px;
+}
+
+/* Album and playlist page styles */
+.album-view {
+  padding: 16px 12px;
+}
+
+.album-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+  text-align: center;
+  width: 100%;
+}
+
+.album-cover-large {
+  position: relative;
+  width: 70%;
+  max-width: 280px;
+  padding-bottom: 70%; /* Square aspect ratio */
+  margin-bottom: 16px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.album-cover-large img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.album-info h1 {
+  font-size: 20px;
+  margin: 0 0 4px 0;
+}
+
+.album-info h2 {
+  font-size: 16px;
+  margin: 0 0 8px 0;
+  color: var(--text-secondary);
+}
+
+.album-info p {
+  font-size: 14px;
+  margin: 0;
+  color: var(--text-tertiary);
+}
+
+/* Search page styles */
+.search-container {
+  padding: 16px 12px;
+}
+
+.search-header {
+  margin-bottom: 16px;
+  padding-top: 12px;
+}
+
+.search-input-container {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.search-input {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px 12px 40px;
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+}
+
+.search-results-section {
+  margin-bottom: 32px;
+}
+
+/* For iPhones with notches */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .library-header, .search-header, .album-header {
+    padding-top: env(safe-area-inset-top, 12px);
+  }
+  
+  #bottom-nav {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+}

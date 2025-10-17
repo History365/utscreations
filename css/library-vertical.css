@@ -1,0 +1,118 @@
+/* Vertical Library Navigation Styles */
+.vertical-library-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.vertical-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.vertical-nav-item i {
+  width: 20px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.vertical-nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.vertical-nav-item.active {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--text-primary);
+  border-left: 3px solid var(--primary-color);
+}
+
+.vertical-nav-item.active i {
+  color: var(--primary-color);
+}
+
+/* Library content container */
+.library-content {
+  margin-top: 20px;
+}
+
+/* Tab content styling */
+.library-tab-content {
+  display: none;
+}
+
+.library-tab-content.active {
+  display: block;
+}
+
+/* Uniform album grid styling */
+.uniform-albums {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.album-cover-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* Square aspect ratio */
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.album-cover-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.album-card:hover .album-cover-container img {
+  transform: scale(1.05);
+}
+
+.album-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 8px 0 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.album-artist {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .uniform-albums {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .uniform-albums {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

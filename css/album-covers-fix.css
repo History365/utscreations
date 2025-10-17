@@ -1,0 +1,59 @@
+/* Additional consistency fixes for album covers */
+.uniform-cover {
+  transition: all 0.2s ease;
+}
+
+/* Fix for library page album grid */
+.uniform-albums .album-item {
+  width: 100%;
+}
+
+.uniform-albums .album-cover-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* Maintain perfect square aspect ratio */
+}
+
+.uniform-albums .album-cover-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Small phone screens */
+@media (max-width: 360px) {
+  .album-cover-large.uniform-cover {
+    width: 85%;
+    padding-bottom: 85%;
+  }
+}
+
+/* Medium-sized screens */
+@media (min-width: 576px) {
+  .album-cover-large.uniform-cover {
+    width: 60%;
+    padding-bottom: 60%;
+    max-width: 320px;
+  }
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+  .album-cover-large.uniform-cover {
+    width: 50%;
+    padding-bottom: 50%;
+    max-width: 400px;
+  }
+}
+
+/* For devices in landscape orientation */
+@media (orientation: landscape) and (max-height: 500px) {
+  .album-cover-large.uniform-cover {
+    width: 40%;
+    padding-bottom: 40%;
+    margin-bottom: 12px;
+  }
+}

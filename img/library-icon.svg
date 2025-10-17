@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <path d="M352 96h-32v64h32V96zm-32 160h32v-64h-32v64zm32 160h-32v-64h32v64zm-192-96h-64v-32h64v32zm-64-160h64v32h-64v-32zm64 256h-64v-32h64v32zm192-128H160v-32h192v32zm0 160H160v-32h192v32zm0-288H160v-32h192v32z" fill="currentColor"/>
+</svg>

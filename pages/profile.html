@@ -1,0 +1,55 @@
+<!-- Profile Page -->
+<div class="container">
+  <div class="profile-container">
+    <div class="profile-header">
+      <img id="profile-image" src="img/default-profile.png" alt="Profile" class="profile-image">
+      <h2 id="profile-name">User Name</h2>
+      <p id="profile-email" class="profile-email">user@example.com</p>
+      <button id="logout-btn" class="btn btn-outline">Sign Out</button>
+    </div>
+    
+    <div class="settings-section">
+      <h3>Settings</h3>
+      
+      <div class="setting-item">
+        <div class="setting-label">Dark Mode</div>
+        <div class="setting-control">
+          <label class="switch">
+            <input type="checkbox" id="dark-mode-toggle" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      
+      <div class="setting-item">
+        <div class="setting-label">Stream Quality</div>
+        <div class="setting-control">
+          <select id="quality-setting" class="form-control">
+            <option value="high">High</option>
+            <option value="medium" selected>Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="setting-item">
+        <div class="setting-label">Download Over Cellular</div>
+        <div class="setting-control">
+          <label class="switch">
+            <input type="checkbox" id="cellular-download">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      
+      <div class="setting-action">
+        <button id="clear-cache" class="btn btn-danger">Clear Cache</button>
+      </div>
+      
+      <div class="app-info">
+        <p>MusicListener6000 v1.0.0</p>
+        <p>© 2025 Music Listener Inc.</p>
+      </div>
+    </div>
+  </div>
+</div>
